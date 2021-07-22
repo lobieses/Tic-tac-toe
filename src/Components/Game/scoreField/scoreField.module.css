@@ -1,0 +1,14 @@
+.score {
+    width: 200px;
+}
+
+.score h1 {
+    margin: 0px;
+    color: #fefefe;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.players {
+    margin-top: 10px;
+}

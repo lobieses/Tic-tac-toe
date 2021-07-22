@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    gap: 35px;
+    background-color: #535f7e;
+    width: 600px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+
