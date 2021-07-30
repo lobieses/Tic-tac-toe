@@ -2,14 +2,35 @@ import React from 'react';
 import style from './gameField.module.css';
 
 const GameField = (props) => {
-    const click = (event) => {
-        let a = event.target.getAttribute('data-num');
-        debugger
-    }
+    const fields = props.field.map((a,num) => {
+        let thisFieldIsBusy
+        if(props.field[num]) {
+            thisFieldIsBusy = props.field[num] === 'X' ? style.krestik : style.nolik;
+        }
+
+        return (
+                <div key={num} className={style.markupField}>
+                    <div
+                        className={`${style.gameField} ${thisFieldIsBusy}`}
+                        onClick={
+                            props.field[num]
+                                ? null
+                                : () => props.onPlayerStep(num)
+                        }
+                    ></div>
+                </div>
+            )
+    });
 
     return (
-        <div className={style.game} onClick={click}>
-            <div className={style.markupField}>
+        <div className={style.game}>
+            {fields}
+        </div>
+    )
+}
+
+{/*
+        <div className={style.markupField}>
                 <div className={style.gameField}>1</div>
             </div>
             <div className={style.markupField}>
@@ -36,8 +57,6 @@ const GameField = (props) => {
             <div className={style.markupField}>
                 <div className={style.gameField}>9</div>
             </div>
-        </div>
-    )
-}
+*/}
 
 export default GameField

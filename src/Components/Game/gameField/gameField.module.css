@@ -9,10 +9,12 @@
 .markupField {
     width: 100%;
     height: 100px;
+    position: relative;
 }
 
-.markupField {
-    position: relative;
+.gameField {
+    width: 100%;
+    height: 100%;
 }
 
 .markupField:nth-child(7):before, .markupField:nth-child(8):before {
@@ -78,4 +80,5 @@
 .krestik:after {
     transform: rotate(-45deg);
 }
+
 

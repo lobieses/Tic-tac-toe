@@ -7,7 +7,11 @@ import ScoreField from "./scoreField/scoreField";
 const Game = (props) => {
     return (
         <div className={style.container}>
-            <GameField />
+            <GameField
+                field={props.field}
+                currentPlayer={props.currentPlayer}
+                onPlayerStep={props.onPlayerStep}
+            />
             <ScoreField />
         </div>
     )
