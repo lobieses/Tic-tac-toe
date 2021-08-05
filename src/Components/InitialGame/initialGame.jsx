@@ -4,7 +4,7 @@ import {Input} from "../Common/FormControls/FormControls";
 
 import {ValidateList, nameHasSpaces, nameIsEmpty, maxLength} from "../../utils/validator/validator";
 
-const maxLengthForValidate = maxLength(15);
+const maxLengthForValidate = maxLength(10);
 const validateForForm = ValidateList([nameHasSpaces, nameIsEmpty, maxLengthForValidate]);
 
 const InitialGame = (props) => {

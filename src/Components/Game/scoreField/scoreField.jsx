@@ -6,10 +6,13 @@ const ScoreField = (props) => {
         <div className={style.score}>
             <h1>Score</h1>
             <div className={style.players}>
-                <h1>Player: 0</h1>
-                <h1>Player 2: 0</h1>
+                <div className={style.scorePlayer}>
+                    <span>{props.playersAndScore[0].name}:</span><span>{props.playersAndScore[0].score}</span>
+                </div>
+                <div className={style.scorePlayer}>
+                    <span>{props.playersAndScore[1].name}:</span><span>{props.playersAndScore[1].score}</span>
+                </div>
             </div>
-
         </div>
     )
 }

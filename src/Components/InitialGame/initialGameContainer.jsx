@@ -4,11 +4,11 @@ import InitialGame from "./initialGame";
 import {
     setPlayers,
     finishInitialProcess
-} from '../../Redux/initialGame-reducer';
+} from '../../Redux/app-reducer';
 
 const InitialGameContainer = (props) => {
     const onSubmit = (form) => {
-        props.setPlayers(form);
+        props.setPlayers([form.player1, form.player2]);
         props.finishInitialProcess();
     }
 
@@ -20,7 +20,8 @@ const InitialGameContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    aboba: state.game.aboba,
+
+
 });
 
 export default connect(mapStateToProps, {setPlayers, finishInitialProcess})(InitialGameContainer);

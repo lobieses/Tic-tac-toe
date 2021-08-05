@@ -3,7 +3,6 @@ import gameReducer from './app-reducer';
 import initialGameReducer from "./initialGame-reducer";
 
 let reducers = combineReducers({
-    initialGame: initialGameReducer,
     game: gameReducer,
 });
 

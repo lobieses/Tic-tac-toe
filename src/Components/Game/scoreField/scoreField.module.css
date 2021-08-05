@@ -1,14 +1,28 @@
 .score {
-    width: 200px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score .players {
+    margin-top: 10px;
+    font-size: 30px;
 }
 
 .score h1 {
-    margin: 0px;
-    color: #fefefe;
-    font-size: 40px;
-    font-weight: normal;
+    text-align: center;
+    font-size: 35px;
 }
 
-.players {
-    margin-top: 10px;
+.score .scorePlayer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.score h1, .score .scorePlayer {
+    width: 250px;
+    margin: 0;
+    color: #fefefe;
+    font-weight: normal;
 }

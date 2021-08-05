@@ -13,7 +13,7 @@ const GameField = (props) => {
                     <div
                         className={`${style.gameField} ${thisFieldIsBusy}`}
                         onClick={
-                            props.field[num]
+                            props.field[num] || props.winnerPlayer
                                 ? null
                                 : () => props.onPlayerStep(num)
                         }

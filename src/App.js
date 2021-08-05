@@ -19,7 +19,7 @@ const App = ({isStartGame}) => {
 }
 
 const mapStateToProps = (state) => ({
-    isStartGame: state.initialGame.initialProcessIsFinish,
+    isStartGame: state.game.initialProcessIsFinish,
 });
 
 let AppContainer = connect(mapStateToProps, {})(App);
