@@ -1,15 +1,20 @@
 import React from "react";
-//className={style.form + ' ' + ((errors[name] || status[name]) ? style.error : undefined)} для стилей ошибок
-export const FormControls = ({ name, errors, status = {},...props }) => {
+import style from './FormControls.module.css'
+
+export const FormControls = ({ name, errors, status = {}, touched, ...props }) => {
     return (
-        <div >
+        <div className={style.form + ' ' + ((errors[name] || status[name]) && touched[name] ? style.error : '')}>
             <div>
                 {props.children}
             </div>
-            <div>
-                <p>{errors[name]}</p>
-                <p>{status[name]}</p>
-            </div>
+            {touched[name]
+                ? <div>
+                    <p>{errors[name]}</p>
+                    <p>{status[name]}</p>
+                  </div>
+                : null
+            }
+
         </div>
     )
 }

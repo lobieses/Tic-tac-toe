@@ -3,7 +3,7 @@ import style from './game.module.css';
 
 import GameField from "./gameField/gameField";
 import ScoreField from "./scoreField/scoreField";
-import WinField from "./winField/winField";
+import WinOrDrawField from "./winOrDrawField/winOrDrawField";
 
 const Game = (props) => {
     return (
@@ -14,9 +14,10 @@ const Game = (props) => {
                 onPlayerStep={props.onPlayerStep}
                 winnerPlayer={props.winnerPlayer}
             />
-            {props.winnerPlayer
-                ? <WinField
+            {props.winnerPlayer || props.isDraw
+                ? <WinOrDrawField
                     winnerPlayer={props.winnerPlayer}
+                    isDraw={props.isDraw}
                     onRetryGame={props.onRetryGame}
                 />
                 : <ScoreField

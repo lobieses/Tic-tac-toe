@@ -1,4 +1,5 @@
 export const ValidateList = validators => value => {
+
     for(const func of validators) {
         const checkForError = func(value);
         if(checkForError) return checkForError;

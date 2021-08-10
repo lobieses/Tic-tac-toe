@@ -14,7 +14,8 @@ let initialState = {
     field: ['', '', '',
             '', '', '',
             '', '', ''],
-    winnerPlayer: undefined
+    winnerPlayer: undefined,
+    isDraw: false
 };
 
 const appReducer = (state = initialState, action) => {
@@ -60,11 +61,17 @@ const appReducer = (state = initialState, action) => {
         case CHECK_WINNER: {
             let winnerPlayer = undefined;
             let players = state.players;
-
-            if(checkWinnerFunc(state.field)) {
+            const checkWinner = checkWinnerFunc(state.field);
+            if(checkWinner === 'isDraw') {
+                return  {
+                    ...state,
+                    isDraw: true
+                }
+            } else if(checkWinner) {
                 winnerPlayer = state.players[state.currentPlayer].name;
-                players[state.currentPlayer].score++
+                players[state.currentPlayer].score++;
             }
+
             return {
                 ...state,
                 winnerPlayer,
@@ -75,10 +82,11 @@ const appReducer = (state = initialState, action) => {
             return {
                 ...state,
                 winnerPlayer: undefined,
+                isDraw: false,
                 currentPlayer: 'X',
                 field: ['', '', '',
-                    '', '', '',
-                    '', '', '']
+                        '', '', '',
+                        '', '', '']
             }
         }
         default:

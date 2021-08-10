@@ -27,6 +27,7 @@ const GameContainer = (props) => {
             field={props.field}
             currentPlayer={props.currentPlayer}
             winnerPlayer={props.winnerPlayer}
+            isDraw={props.isDraw}
             onPlayerStep={onPlayerStep}
             onRetryGame={onRetryGame}
         />
@@ -37,6 +38,7 @@ const mapStateToProps = (state) => ({
     field: state.game.field,
     currentPlayer: state.game.currentPlayer,
     winnerPlayer: state.game.winnerPlayer,
+    isDraw: state.game.isDraw,
     playersAndScore: [state.game.players['X'], state.game.players['O']],
 });
 

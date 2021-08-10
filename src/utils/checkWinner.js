@@ -1,4 +1,9 @@
 export const checkWinnerFunc = (field) => {
+    const isDraw = !field.some((elem) => {
+        if(elem) return false;
+        return true;
+    });
+
     const winCombinations = [
         [0, 1, 2],
         [3, 4, 5],
@@ -20,11 +25,8 @@ export const checkWinnerFunc = (field) => {
         }
     }
 
+    if(isDraw) return 'isDraw';
+
     return false;
 }
 
-//             if(cells[wins[0]].innerHTML == cells[wins[1]].innerHTML &&
-//                cells[wins[1]].innerHTML == cells[wins[2]].innerHTML &&
-//                cells[wins[0]].innerHTML != '') {
-//                 return  cells[wins[0]];
-//             }

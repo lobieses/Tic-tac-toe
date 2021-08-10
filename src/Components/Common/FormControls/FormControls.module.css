@@ -1,0 +1,11 @@
+.form {
+    height: 66px;
+}
+.form.error input {
+    transition: 0.3s all;
+    border: 2px solid red;
+}
+.error p {
+    color: red;
+    margin: 5px auto;
+}
