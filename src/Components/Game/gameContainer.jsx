@@ -23,7 +23,7 @@ const GameContainer = (props) => {
 
     return (
         <Game
-            playersAndScore={props.playersAndScore}
+            playerInfo={props.playerInfo}
             field={props.field}
             currentPlayer={props.currentPlayer}
             winnerPlayer={props.winnerPlayer}
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => ({
     currentPlayer: state.game.currentPlayer,
     winnerPlayer: state.game.winnerPlayer,
     isDraw: state.game.isDraw,
-    playersAndScore: [state.game.players['X'], state.game.players['O']],
+    playerInfo: state.game.players
 });
 
 export default connect(mapStateToProps, {updateGameField, changePlayer, checkWinner, renewGame})(GameContainer);

@@ -8,7 +8,7 @@ import InitialGameContainer from "./Components/InitialGame/initialGameContainer"
 
 const App = ({isStartGame}) => {
         return (
-            <div>
+            <div className='entryContainer'>
                 {!isStartGame
                     ? <InitialGameContainer />
                     : <GameContainer />

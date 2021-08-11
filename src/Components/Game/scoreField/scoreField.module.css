@@ -1,3 +1,10 @@
+.score h1, .score .scorePlayer, .score .currentPlayer {
+    width: 250px;
+    margin: 0;
+    color: #e5e5e5;
+    font-weight: normal;
+}
+
 .score {
     width: 250px;
     display: flex;
@@ -20,9 +27,23 @@
     justify-content: space-between;
 }
 
-.score h1, .score .scorePlayer {
-    width: 250px;
-    margin: 0;
-    color: #fefefe;
-    font-weight: normal;
+.score .scorePlayer .namesPlayer {
+    color: #ef233c;
 }
+
+.score .currentPlayer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.score .currentPlayer .current {
+    font-size: 25px;
+}
+.score .currentPlayer .current span {
+    color: #ef233c;
+}
+
+
+
+

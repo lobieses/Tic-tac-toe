@@ -21,7 +21,8 @@ const Game = (props) => {
                     onRetryGame={props.onRetryGame}
                 />
                 : <ScoreField
-                    playersAndScore={props.playersAndScore}
+                    playerInfo={props.playerInfo}
+                    currentPlayer={props.currentPlayer}
                 />
 
             }
