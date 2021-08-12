@@ -1,17 +1,20 @@
 import React from 'react';
 import style from './gameField.module.css';
+import winLine from './stylesForWinLine.module.css';
 
 const GameField = (props) => {
     const fields = props.field.map((a,num) => {
         let thisFieldIsBusy
+        const classForWinnerLine = num === 0 && props.winCombination ? winLine[props.winCombination] : '';
+
         if(props.field[num]) {
-            thisFieldIsBusy = props.field[num] === 'X' ? style.krestik : style.nolik;
+            thisFieldIsBusy = props.field[num] === 'X' ? style.cross : style.zero;
         }
 
         return (
-                <div key={num} className={style.markupField}>
+                <div key={num} className={`${style.markupField} ${classForWinnerLine}`}>
                     <div
-                        className={`${style.gameField} ${thisFieldIsBusy}`}
+                        className={`${style.gameField} ${thisFieldIsBusy ? thisFieldIsBusy : ''}`}
                         onClick={
                             props.field[num] || props.winnerPlayer
                                 ? null
@@ -28,35 +31,5 @@ const GameField = (props) => {
         </div>
     )
 }
-
-{/*
-        <div className={style.markupField}>
-                <div className={style.gameField}>1</div>
-            </div>
-            <div className={style.markupField}>
-                <div className={`${style.gameField} ${style.nolik}`}>2</div>
-            </div>
-            <div className={style.markupField}>
-                <div className={style.gameField}>3</div>
-            </div>
-            <div className={style.markupField}>
-                <div className={style.gameField}>4</div>
-            </div>
-            <div className={style.markupField}>
-                <div className={`${style.gameField} ${style.krestik}`}>5</div>
-            </div>
-            <div className={style.markupField}>
-                <div className={style.gameField} data-num='6'>6</div>
-            </div>
-            <div className={style.markupField}>
-                <div className={style.gameField}>7</div>
-            </div>
-            <div className={style.markupField}>
-                <div className={style.gameField}>8</div>
-            </div>
-            <div className={style.markupField}>
-                <div className={style.gameField}>9</div>
-            </div>
-*/}
 
 export default GameField

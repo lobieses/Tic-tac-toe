@@ -19,10 +19,5 @@ const InitialGameContainer = (props) => {
     )
 }
 
-const mapStateToProps = (state) => ({
-
-
-});
-
-export default connect(mapStateToProps, {setPlayers, finishInitialProcess})(InitialGameContainer);
+export default connect(null, {setPlayers, finishInitialProcess})(InitialGameContainer);
 

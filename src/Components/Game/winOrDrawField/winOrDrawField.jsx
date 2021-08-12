@@ -15,5 +15,4 @@ const WinOrDrawField = (props) => {
     )
 }
 
-
 export default WinOrDrawField;

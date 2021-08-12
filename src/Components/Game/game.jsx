@@ -13,6 +13,7 @@ const Game = (props) => {
                 currentPlayer={props.currentPlayer}
                 onPlayerStep={props.onPlayerStep}
                 winnerPlayer={props.winnerPlayer}
+                winCombination={props.winCombination}
             />
             {props.winnerPlayer || props.isDraw
                 ? <WinOrDrawField
@@ -24,12 +25,9 @@ const Game = (props) => {
                     playerInfo={props.playerInfo}
                     currentPlayer={props.currentPlayer}
                 />
-
             }
-
         </div>
     )
 }
-
 
 export default Game;

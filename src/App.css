@@ -1,0 +1,27 @@
+html, body {
+    width: 100%;
+    height:100vh;
+    margin: 0;
+}
+
+body {
+    position: absolute;
+    background: radial-gradient(circle, hsla(227, 31%, 23%, 1) 4%, hsla(235, 21%, 21%, 1) 100%, hsl(218, 64%, 33%) 100%);
+    background-attachment:fixed;
+}
+
+.entryContainer {
+    margin-top: 100px;
+}
+
+@media (max-width: 425px) {
+    .entryContainer {
+        padding-top: 200px;
+    }
+}
+
+@media (max-width: 320px) {
+    .entryContainer {
+        padding-top: 300px;
+    }
+}

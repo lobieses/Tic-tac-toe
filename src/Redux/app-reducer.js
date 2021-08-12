@@ -15,6 +15,7 @@ let initialState = {
             '', '', '',
             '', '', ''],
     winnerPlayer: undefined,
+    winCombination: undefined,
     isDraw: false
 };
 
@@ -60,8 +61,11 @@ const appReducer = (state = initialState, action) => {
         }
         case CHECK_WINNER: {
             let winnerPlayer = undefined;
+            let winCombination = undefined;
             let players = state.players;
+
             const checkWinner = checkWinnerFunc(state.field);
+
             if(checkWinner === 'isDraw') {
                 return  {
                     ...state,
@@ -69,19 +73,26 @@ const appReducer = (state = initialState, action) => {
                 }
             } else if(checkWinner) {
                 winnerPlayer = state.players[state.currentPlayer].name;
+                winCombination = checkWinner;
                 players[state.currentPlayer].score++;
+
+                return {
+                    ...state,
+                    winnerPlayer,
+                    winCombination,
+                    players
+                }
+            }
+            return {
+                ...state
             }
 
-            return {
-                ...state,
-                winnerPlayer,
-                players
-            }
         }
         case RENEW_GAME: {
             return {
                 ...state,
                 winnerPlayer: undefined,
+                winCombination: undefined,
                 isDraw: false,
                 currentPlayer: 'X',
                 field: ['', '', '',
@@ -94,15 +105,11 @@ const appReducer = (state = initialState, action) => {
     }
 }
 
-
 export const setPlayers = players => ({type: SET_PLAYERS, players});
 export const finishInitialProcess = () => ({type: FINISH_INITIAL_PROCESS});
 export const updateGameField = (numOfClickedField) => ({type: UPDATE_GAME_FIELD, numOfClickedField});
 export const changePlayer = () => ({type: CHANGE_PLAYER});
 export const checkWinner = () => ({type: CHECK_WINNER});
 export const renewGame = () => ({type: RENEW_GAME});
-
-
-
 
 export default appReducer

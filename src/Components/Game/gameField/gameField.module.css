@@ -38,7 +38,7 @@
     content: '';
 }
 
-.nolik::after {
+.zero:after {
     position: absolute;
     border: 6px solid #ef233c;
     width: 74px;
@@ -54,7 +54,7 @@
     content: "";
 }
 
-.krestik:before, .krestik:after {
+.cross:before, .cross:after {
     position: absolute;
     background-color: #ef233c;
 
@@ -68,14 +68,13 @@
     margin-top: -54px;
 
     content: '';
-
-
-
 }
-.krestik:before {
+
+.cross:before {
     transform: rotate(45deg);
 }
-.krestik:after {
+
+.cross:after {
     transform: rotate(-45deg);
 }
 

@@ -1,0 +1,110 @@
+.horizontal1:after,
+.horizontal2:after,
+.horizontal3:after,
+.vertical1:after,
+.vertical2:after,
+.vertical3:after,
+.diagonal1:after,
+.diagonal2:after
+{
+    position: absolute;
+    content: '';
+    z-index: 999;
+}
+
+.horizontal1:after,
+.horizontal2:after,
+.horizontal3:after
+{
+    width: 320px;
+    height: 0;
+
+    left: -10px;
+
+    border-bottom: 6px solid #dc2f02;
+    border-radius: 50px;
+}
+
+.horizontal1:after {
+    bottom: 47px;
+}
+
+.horizontal2:after {
+    bottom: -54px;
+}
+
+.horizontal3:after {
+    bottom: -154px;
+}
+
+.vertical1:after,
+.vertical2:after,
+.vertical3:after
+{
+    width: 0;
+    height: 320px;
+
+    top: -10px;
+
+    border-right: 6px solid #3b39e5;
+    border-radius: 30px;
+}
+
+.vertical1:after {
+    left: 48px;
+}
+
+.vertical2:after {
+    left: 148px;
+}
+
+.vertical3:after {
+    left: 248px;
+}
+
+.diagonal1:after,
+.diagonal2:after
+{
+    width: 420px;
+    height: 0;
+
+    border-bottom: 6px solid #dc2f02;
+    border-radius: 50px;
+}
+
+.diagonal1:after {
+    left: -60px;
+    bottom: -53px;
+    transform: rotate(45deg);
+}
+
+.diagonal2:after {
+    left: -60px;
+    bottom: -55px;
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

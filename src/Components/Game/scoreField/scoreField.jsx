@@ -4,7 +4,6 @@ import style from './scoreField.module.css';
 const ScoreField = (props) => {
     const playersAndScore = [props.playerInfo['X'], props.playerInfo['O']]
 
-
     return (
         <div className={style.score}>
             <h1>Score</h1>

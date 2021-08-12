@@ -22,7 +22,7 @@ const mapStateToProps = (state) => ({
     isStartGame: state.game.initialProcessIsFinish,
 });
 
-let AppContainer = connect(mapStateToProps, {})(App);
+let AppContainer = connect(mapStateToProps, null)(App);
 
 const TicTacToe = () => {
   return (
